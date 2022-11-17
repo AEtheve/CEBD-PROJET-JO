@@ -20,3 +20,7 @@ EstEquipier[numSp] ⊆ LesParticipants[numP]
 EstEquipier[numEq] ⊆ LesEquipes[numEq]  
 LesResultats[numP] ⊆ LesParticipants[numP]  
 LesResultats[numEp] ⊆ LesEpreuves[numEp]  
+
+On peut aussi ajouter les vues suivantes:
+  - __nbEquipiers__ pour les Equipes qui affiche le nombre d'équipiers dans une équipe
+  - __nbVictoires__ pour les Equipes qui affiche le nombre de victoires (nombres de médailles) d'une équipe
