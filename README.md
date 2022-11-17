@@ -8,8 +8,8 @@ LesEquipes (<ins>numEq</ins>)
 EstEquipier (<ins>numSp numEq</ins>)  
 MedaillesOr (<ins>numP numEp</ins>)  
 MedaillesArgent (<ins>numP numEp</ins>)  
-MedaillesBronze( <ins>numP numEp</ins>)  
-LesInscriptions (<ins> numP numEp </ins>)  
+MedaillesBronze(<ins>numP numEp</ins>)  
+LesInscriptions (<ins>numP numEp</ins>)  
 
 ### Domaines
 domaine(numSp) = domaine(numEp) = domaine(nbSportifsEp) = domaine(numP) = domaine(numEq) = domaine(or) = domaine(argent) = domaine(bronze) = entiers > 0;  
