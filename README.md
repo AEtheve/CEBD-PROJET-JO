@@ -7,7 +7,7 @@ LesSportifs (<ins>numSp</ins>, nomSp, prenomSp, dateNaissance, categorieSp, pays
 LesEpreuves (<ins>numEp</ins>, nomEp, formeEp, categorieEp, nbSportifsEp, dateEp, nomDi)  
 /* <nu,n,f,c,nb,d,nd> L'épreuve de forme f et catégorie c, qui fait partie de la discipline nd est identifiée par le numéro nu. Elle a un nombre nb de sportifs et elle se déroule à la date d. */   
 
-LesParticipants (<ins>numP</ins>, nomSp, prenomSp, dateNaissance, categorie, pays)  
+LesParticipants (<ins>numP</ins>, nomP, prenomP, dateNaissance, categorie, pays)  
 /* <nu,n,p,d,c,p> Le participant à une épreuve de categorie c, qui répresente le pays p, est identifié par le numéro nu, il a le nom n, le prénom p, la date de naissance d.*/  
 
 LesEquipes (<ins>numEq</ins>)  
