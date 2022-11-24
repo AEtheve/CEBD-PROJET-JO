@@ -11,7 +11,7 @@ LesParticipants (<ins>numP</ins>, nomSp, prenomSp, dateNaissance, categorie, pay
 /* <nu,n,p,d,c,p> Le participant à une épreuve de categorie c, qui répresente le pays p, est identifié par le numéro nu, il a le nom n, le prénom p, la date de naissance d.*/  
 
 LesEquipes (<ins>numEq</ins>)  
-/* <n> Les équipes sont identifiées par le numéro n. */  
+/* \<n\> Les équipes sont identifiées par le numéro n. */  
 
 EstEquipier (<ins>numSp numEq</ins>)  
 /* <ns,ne> Le sportif ns fait partie de l'équipe ne. */  
