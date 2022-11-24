@@ -1,7 +1,7 @@
 # CEBD-PROJET-JO
 
 ### Schema Relationnel
-LesSportifs (<ins>numSp</ins>, nomSp, prenomSp, dateNaissance, categorie, pays)  
+LesSportifs (<ins>numSp</ins>, nomSp, prenomSp, dateNaissance, categorieSp, pays)  
 /* <nu,n,p,d,c,pa> Le sportif identifié par le numéro nu a le nom n, le prenom p, la date de naissance d, il fait partie de la categorie c et il répresente le pays p.*/  
 
 LesEpreuves (<ins>numEp</ins>, nomEp, formeEp, categorieEp, nbSportifsEp, dateEp, nomDi)  
@@ -28,7 +28,7 @@ MedaillesBronze(<ins>numP numEp</ins>)
 LesInscriptions (<ins>numP numEp</ins>)  
 /* <np, ne> Le participant np est inscrit à l'épreuve ne.  */  
 
-LesDisciplines (<ins> nom </ins>)
+LesDisciplines (<ins>nom</ins>)
 /* <n> n est le nom d'une discipline. */ 
 
 ### Domaines
