@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>900</height>
+    <width>661</width>
+    <height>686</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,7 +38,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -73,7 +72,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -108,7 +106,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -130,7 +127,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -155,7 +151,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -180,7 +175,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -218,7 +212,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -253,7 +246,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -769,7 +761,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -788,7 +779,7 @@
      <rect>
       <x>10</x>
       <y>140</y>
-      <width>681</width>
+      <width>843</width>
       <height>44</height>
      </rect>
     </property>
@@ -919,7 +910,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -936,8 +926,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>710</width>
-     <height>21</height>
+     <width>661</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFiles">
@@ -1108,8 +1098,8 @@
    <slot>insertDBV1()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>525</x>
-     <y>193</y>
+     <x>664</x>
+     <y>201</y>
     </hint>
     <hint type="destinationlabel">
      <x>512</x>
@@ -1124,8 +1114,8 @@
    <slot>openDataV1()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>646</x>
-     <y>190</y>
+     <x>837</x>
+     <y>201</y>
     </hint>
     <hint type="destinationlabel">
      <x>693</x>
@@ -1181,6 +1171,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_2_1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_fct_2_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>635</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createDBV0()</slot>
@@ -1196,5 +1202,6 @@
   <slot>insertDBV1()</slot>
   <slot>openDataV1()</slot>
   <slot>createTriggersDBV1()</slot>
+  <slot>open_fct_2_1()</slot>
  </slots>
 </ui>
