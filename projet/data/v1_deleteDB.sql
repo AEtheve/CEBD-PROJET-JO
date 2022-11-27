@@ -8,7 +8,8 @@ DROP TABLE IF EXISTS LesEpreuves;
 DROP TABLE IF EXISTS LesSportifs;
 DROP TABLE IF EXISTS LesParticipants;
 DROP TABLE IF EXISTS LesDisciplines;
-
+DROP VIEW IF EXISTS LesAgesSportifs;
+DROP VIEW IF EXISTS LesNbsEquipiers;
 
 
 -- TODO 3.3 : pensez à détruire vos triggers !

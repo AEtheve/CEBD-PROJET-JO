@@ -111,6 +111,28 @@ CREATE TABLE LesInscriptions
   CONSTRAINT I_FK1 FOREIGN KEY (numP) REFERENCES LesParticipants(numP),
   CONSTRAINT I_FK2 FOREIGN KEY (numEp) REFERENCES LesEpreuves(numEp)
 );
--- TODO 1.4a : ajouter la définition de la vue LesAgesSportifs
+-- TODO 1.4a : ajouter la définition de la vue
+
+CREATE VIEW LesAgesSportifs(
+    numSp ,
+    nomSp,
+    prenomSp,
+    age
+) AS SELECT
+    numSp,
+    nomSp,
+    prenomSp,
+    strftime('%Y', 'now') - strftime('%Y', dateNaissance)
+FROM LesSportifs;
+
+
 -- TODO 1.5a : ajouter la définition de la vue LesNbsEquipiers
+
+CREATE VIEW LesNbsEquipiers (
+    numEq,
+    nbEquipiers
+)   AS SELECT numEq, COUNT(numSp) AS nbEquipiers
+    FROM EstEquipier
+    GROUP BY numEq;
 -- TODO 3.3 : ajouter les éléments nécessaires pour créer le trigger (attention, syntaxe SQLite différent qu'Oracle)
+
