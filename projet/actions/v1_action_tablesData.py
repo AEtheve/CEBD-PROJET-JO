@@ -1,10 +1,9 @@
 
 import sqlite3
 from utils import display
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QDialog, QWidget, QTableWidget, QHeaderView
 from PyQt5.QtCore import pyqtSlot
 from PyQt5 import uic
-
 # Classe permettant d'afficher la fenêtre de visualisation des données
 class AppTablesDataV1(QDialog):
 
@@ -37,21 +36,24 @@ class AppTablesDataV1(QDialog):
     # Fonction permettant de mettre à jour toutes les tables
     @pyqtSlot()
     def refreshAllTablesV1(self):
+        tabs = self.data.cursor().execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
+        tabs = self.data.cursor().execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'V0_%'").fetchall()
+        for tab in tabs:
+            tabTest = QWidget()
+            tabTest.setObjectName(tab[0])
+            self.ui.tabWidget.addTab(tabTest, tab[0])
+            table = QTableWidget(tabTest)
+            table.setColumnCount(2)
+            
+            table.setGeometry(0, 0, 905, 447)
+            
+            cursor = self.data.cursor()
+            result = cursor.execute('SELECT * FROM ' + tab[0])
+            table.setColumnCount(len(result.description))
+            table.setHorizontalHeaderLabels([i[0] for i in result.description])
 
-        self.refreshTable(self.ui.label_epreuves, self.ui.tableEpreuves, "SELECT numEp, nomEp, formeEp, nomDi, categorieEp, nbSportifsEp, dateEp, nomDi FROM LesEpreuves")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numSp, nomSp, prenomSp, pays, categorieSp, dateNaissance FROM LesSportifs")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numP, nomP, prenomP, pays, categorie, dateNaissance FROM LesParticipants")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numEq FROM LesEquipes")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numSp, numEq FROM EstEquipier")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numP, numEp FROM MedaillesOr")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numP, numEp FROM MedaillesArgent")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numP, numEp FROM MedaillesBronze")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT numP, numEp FROM LesInscriptions")
-        self.refreshTable(self.ui.label_sportifs, self.ui.tableSportifs, "SELECT nom FROM LesDisciplines")
+            self.refreshTable(self.ui.label_error, table, 'SELECT * FROM ' + tab[0])
+            table.horizontalHeader().setSectionResizeMode(0, QHeaderView.Stretch)
 
-
-
-
-        # TODO 1.3 : modifier pour afficher les nouveaux éléments (il faut aussi changer le fichier .ui correspondant)
         # TODO 1.4b : ajouter l'affichage des éléments de la vue LesAgesSportifs après l'avoir créée
         # TODO 1.5b : ajouter l'affichage des éléments de la vue LesNbsEquipiers après l'avoir créée

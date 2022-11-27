@@ -23,7 +23,9 @@ class AppFctComp2Partie1(QDialog):
         display.refreshLabel(self.ui.label_fct_comp_2, "")
         try:
             cursor = self.data.cursor()
-            result = cursor.execute("SELECT DISTINCT categorieEp FROM LesEpreuves")
+            result = cursor.execute(
+                    "SELECT numEp, nomEp, formeEp, categorieEp, nbSportifsEp, strftime('%Y-%m-%d',dateEp,'unixepoch'), nomDi FROM LesEpreuves WHERE categorieEp = ?",
+                    [self.ui.comboBox.currentText()])
         except Exception as e:
             self.ui.table_fct_comp_2.setRowCount(0)
             display.refreshLabel(self.ui.label_fct_comp_2, "Impossible d'afficher les résultats : " + repr(e))

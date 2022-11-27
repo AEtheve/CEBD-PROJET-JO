@@ -76,22 +76,22 @@
      </column>
      <column>
       <property name="text">
-       <string>nomDi</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
        <string>categorieEp</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>nomDi</string>
+       <string>nbSportifsEp</string>
       </property>
      </column>
      <column>
       <property name="text">
        <string>dateEp</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>nomDi</string>
       </property>
      </column>
     </widget>
