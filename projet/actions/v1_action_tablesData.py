@@ -36,8 +36,7 @@ class AppTablesDataV1(QDialog):
     # Fonction permettant de mettre à jour toutes les tables
     @pyqtSlot()
     def refreshAllTablesV1(self):
-        tabs = self.data.cursor().execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
-        tabs = self.data.cursor().execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'V0_%'").fetchall()
+        tabs = self.data.cursor().execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'V0_%' OR type='view'").fetchall()
         for tab in tabs:
             tabTest = QWidget()
             tabTest.setObjectName(tab[0])
