@@ -56,22 +56,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
         except IntegrityError as err:
             print(err)
 
-    # Lecture de l'onglet du fichier excel LesParticipants, en interprétant toutes les colonnes comme des string
-    # pour construire uniformement la requête
-    #
-    # df_participants1 = pandas.read_excel(file, sheet_name='LesInscriptions', dtype=str)
-    # df_participants1 = df_participants1.where(pandas.notnull(df_participants1), 'null')
-    #
-    # cursor = data.cursor()
-    # for ix, row in df_participants1.iterrows():
-    #     try:
-    #         query = "insert into LesParticipants values ({})".format(row['numIn'])
-    #         # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-    #         print(query)
-    #         cursor.execute(query)
-    #     except IntegrityError as err:
-    #         print(err)
-
     # Lecture de l'onglet du fichier excel LesSportifs, en interprétant toutes les colonnes comme des strings
     # pour construire uniformement la requête
     df_sportifs = pandas.read_excel(file, sheet_name='LesSportifsEQ', dtype=str)
@@ -143,50 +127,50 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     # Lecture de l'onglet du fichier excel MedaillesOr, en interprétant toutes les colonnes comme des string
     # pour construire uniformement la requête
 
-    # df_medaillesOr = pandas.read_excel(file, sheet_name='MedaillesOr', dtype=str)
-    # df_medaillesOr = df_medaillesOr.where(pandas.notnull(df_medaillesOr), 'null')
-    #
-    # cursor = data.cursor()
-    # for ix, row in df_medaillesOr.iterrows():
-    #     try:
-    #         query = "insert into MedaillesOr values ({},{})".format(row['numP'], row['numEp'])
-    #         # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-    #         print(query)
-    #         cursor.execute(query)
-    #     except IntegrityError as err:
-    #         print(err)
+    df_medaillesOr = pandas.read_excel(file, sheet_name='LesResultats', dtype=str)
+    df_medaillesOr = df_medaillesOr.where(pandas.notnull(df_medaillesOr), 'null')
+
+    cursor = data.cursor()
+    for ix, row in df_medaillesOr.iterrows():
+        try:
+            query = "insert into MedaillesOr values ({},{})".format(row['gold'], row['numEp'])
+            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
+            print(query)
+            cursor.execute(query)
+        except IntegrityError as err:
+            print(err)
     #
     # # Lecture de l'onglet du fichier excel MedaillesArgent, en interprétant toutes les colonnes comme des string
     # # pour construire uniformement la requête
     #
-    # df_medaillesArgent = pandas.read_excel(file, sheet_name='MedaillesArgent', dtype=str)
-    # df_medaillesArgent = df_medaillesArgent.where(pandas.notnull(df_medaillesArgent), 'null')
-    #
-    # cursor = data.cursor()
-    # for ix, row in df_medaillesArgent.iterrows():
-    #     try:
-    #         query = "insert into MedaillesArgent values ({},{})".format(row['numP'], row['numEp'])
-    #         # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-    #         print(query)
-    #         cursor.execute(query)
-    #     except IntegrityError as err:
-    #         print(err)
+    df_medaillesArgent = pandas.read_excel(file, sheet_name='LesResultats', dtype=str)
+    df_medaillesArgent = df_medaillesArgent.where(pandas.notnull(df_medaillesArgent), 'null')
+
+    cursor = data.cursor()
+    for ix, row in df_medaillesArgent.iterrows():
+        try:
+            query = "insert into MedaillesArgent values ({},{})".format(row['silver'], row['numEp'])
+            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
+            print(query)
+            cursor.execute(query)
+        except IntegrityError as err:
+            print(err)
     #
     # # Lecture de l'onglet du fichier excel MedaillesBronze, en interprétant toutes les colonnes comme des string
     # # pour construire uniformement la requête
     #
-    # df_medaillesBronze = pandas.read_excel(file, sheet_name='MedaillesBronze', dtype=str)
-    # df_medaillesBronze = df_medaillesBronze.where(pandas.notnull(df_medaillesBronze), 'null')
-    #
-    # cursor = data.cursor()
-    # for ix, row in df_medaillesBronze.iterrows():
-    #     try:
-    #         query = "insert into MedaillesBronze values ({},{})".format(row['numP'], row['numEp'])
-    #         # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-    #         print(query)
-    #         cursor.execute(query)
-    #     except IntegrityError as err:
-    #         print(err)
+    df_medaillesBronze = pandas.read_excel(file, sheet_name='LesResultats', dtype=str)
+    df_medaillesBronze = df_medaillesBronze.where(pandas.notnull(df_medaillesBronze), 'null')
+
+    cursor = data.cursor()
+    for ix, row in df_medaillesBronze.iterrows():
+        try:
+            query = "insert into MedaillesBronze values ({},{})".format(row['bronze'], row['numEp'])
+            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
+            print(query)
+            cursor.execute(query)
+        except IntegrityError as err:
+            print(err)
     #
     # Lecture de l'onglet du fichier excel LesInscriptions, en interprétant toutes les colonnes comme des string
     # pour construire uniformement la requête
