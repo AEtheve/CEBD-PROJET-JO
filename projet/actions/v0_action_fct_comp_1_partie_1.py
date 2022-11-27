@@ -13,10 +13,12 @@ class AppFctComp1Partie1(QDialog):
         super(QDialog, self).__init__()
         self.ui = uic.loadUi("gui/fct_comp_1.ui", self)
         self.data = data
-        cursor = self.data.cursor()
-        result = cursor.execute("SELECT DISTINCT categorieEp FROM V0_LesEpreuves")
-        for row in result:
-            self.ui.comboBox.addItem(row[0])
+        # cursor = self.data.cursor()
+        # result = cursor.execute("SELECT DISTINCT categorieEp FROM V0_LesEpreuves")
+        # for row in result:
+        #     self.ui.comboBox.addItem(row[0])
+        categories = ["feminin", "masculin", "mixte"]
+        self.ui.comboBox.addItems(categories)
 
     # Fonction de mise à jour de l'affichage
     @pyqtSlot()
