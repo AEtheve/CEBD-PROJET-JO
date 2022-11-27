@@ -1,4 +1,3 @@
--- TODO 1.3a : Détruire les tables manquantes et modifier celles ci-dessous
 DROP TABLE IF EXISTS LesInscriptions;
 DROP TABLE IF EXISTS MedaillesOr;
 DROP TABLE IF EXISTS MedaillesArgent;
