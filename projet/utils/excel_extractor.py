@@ -40,8 +40,6 @@ def read_excel_file_V0(data:sqlite3.Connection, file):
             cursor.execute(query)
         except IntegrityError as err:
             print(f"{err} : \n{row}")
-
-#TODO 1.3a : modifier la lecture du fichier Excel pour lire l'ensemble des données et les intégrer dans le schéma de la BD V1
 def read_excel_file_V1(data:sqlite3.Connection, file):
     # Lecture de l'onglet du fichier excel LesDisciplines, en interprétant toutes les colonnes comme des string
     # pour construire uniformement la requête

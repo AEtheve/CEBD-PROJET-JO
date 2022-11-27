@@ -53,6 +53,3 @@ class AppTablesDataV1(QDialog):
 
             self.refreshTable(self.ui.label_error, table, 'SELECT * FROM ' + tab[0])
             table.horizontalHeader().setSectionResizeMode(0, QHeaderView.Stretch)
-
-        # TODO 1.4b : ajouter l'affichage des éléments de la vue LesAgesSportifs après l'avoir créée
-        # TODO 1.5b : ajouter l'affichage des éléments de la vue LesNbsEquipiers après l'avoir créée
