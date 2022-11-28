@@ -1187,6 +1187,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_2_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_fct_2_2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>354</x>
+     <y>679</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createDBV0()</slot>
