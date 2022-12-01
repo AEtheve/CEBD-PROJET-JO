@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fct_comp_1</class>
+ <widget class="QDialog" name="fct_comp_1">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>866</width>
+    <height>586</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gérer les resultats</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>Resultats</string>
+          </attribute>
+          <widget class="QLabel" name="label_3">
+           <property name="geometry">
+            <rect>
+             <x>290</x>
+             <y>120</y>
+             <width>231</width>
+             <height>201</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../img/b266d817664faa900d0aac59021ae868.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label">
+           <property name="geometry">
+            <rect>
+             <x>520</x>
+             <y>50</y>
+             <width>210</width>
+             <height>200</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../img/fc5197a534bca2aa463dafbb56b3d055.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>40</y>
+             <width>321</width>
+             <height>201</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../img/cd8afdbc849630ee016dd232c3c45ae0.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="SelectArgent">
+           <property name="geometry">
+            <rect>
+             <x>70</x>
+             <y>250</y>
+             <width>221</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="placeholderText">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="editOr">
+           <property name="geometry">
+            <rect>
+             <x>360</x>
+             <y>360</y>
+             <width>100</width>
+             <height>32</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Modifier</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="editArgent">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>280</y>
+             <width>100</width>
+             <height>32</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Modifier</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="editBronze">
+           <property name="geometry">
+            <rect>
+             <x>570</x>
+             <y>280</y>
+             <width>100</width>
+             <height>32</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Modifier</string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="SelectOr">
+           <property name="geometry">
+            <rect>
+             <x>300</x>
+             <y>330</y>
+             <width>221</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="placeholderText">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="SelectBronze">
+           <property name="geometry">
+            <rect>
+             <x>520</x>
+             <y>250</y>
+             <width>221</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="placeholderText">
+            <string/>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Numéro de l'épreuve:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <property name="placeholderText">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Sélectionner</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../img/images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>editArgent</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_comp_1</receiver>
+   <slot>edit_Argent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>editBronze</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_comp_1</receiver>
+   <slot>edit_Bronze()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>636</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>editOr</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_comp_1</receiver>
+   <slot>edit_Or()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>426</x>
+     <y>456</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>fct_comp_1</receiver>
+   <slot>refreshResult()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>646</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>432</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>refreshResult()</slot>
+ </slots>
+</ui>
