@@ -49,6 +49,30 @@ LesInscriptions[numP] ⊆ LesParticipants[numP]
 LesInscriptions[numEp] ⊆ LesEpreuves[numEp]  
 LesEpreuves[nomDi] ⊆ LesDisciplines[nom]  
 
-On peut aussi ajouter les vues suivantes:
-  - __nbEquipiers__ pour les Equipes qui affiche le nombre d'équipiers dans une équipe
-  - __nbVictoires__ pour les Equipes qui affiche le nombre de victoires (nombres de médailles) d'une équipe
+LesSportifs[numSp] ∩ LesEquipes[numEq] = ∅
+ 
+On peut aussi ajouter les vues suivantes:  
+  - __nbEquipiers__ pour calculer le nombre d'equipiers d'une equipe  
+ ```sql
+  CREATE VIEW LesNbsEquipiers (  
+    numEq,  
+    nbEquipiers  
+)   AS SELECT numEq, COUNT(numSp) AS nbEquipiers  
+    FROM EstEquipier  
+    GROUP BY numEq;
+  ```
+  
+  - __LesAgesSportifs__ pour calculer l'age d'un sportif  
+  ```sql 
+  CREATE VIEW LesAgesSportifs(  
+    numSp,    
+    nomSp,  
+    prenomSp,  
+    age  
+) AS SELECT  
+    numSp,  
+    nomSp,  
+    prenomSp,  
+    strftime('%Y', 'now') - strftime('%Y', dateNaissance)  
+FROM LesSportifs;  
+  ```
