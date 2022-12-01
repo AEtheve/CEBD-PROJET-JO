@@ -52,7 +52,7 @@
     <property name="geometry">
      <rect>
       <x>12</x>
-      <y>220</y>
+      <y>230</y>
       <width>681</width>
       <height>16</height>
      </rect>
@@ -64,8 +64,8 @@
    <widget class="QLabel" name="label_partie_0">
     <property name="geometry">
      <rect>
-      <x>7</x>
-      <y>230</y>
+      <x>10</x>
+      <y>240</y>
       <width>691</width>
       <height>31</height>
      </rect>
@@ -201,7 +201,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>190</y>
+      <y>80</y>
       <width>689</width>
       <height>19</height>
      </rect>
@@ -823,6 +823,22 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="label_retour_BD_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>689</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1115,6 +1131,22 @@
     <hint type="sourcelabel">
      <x>350</x>
      <y>649</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_gestion_resultats()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>692</y>
     </hint>
     <hint type="destinationlabel">
      <x>359</x>

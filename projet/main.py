@@ -15,6 +15,7 @@ from actions.v0_action_fct_comp_2_partie_1 import AppFctComp2Partie1
 from actions.v1_action_fct_2_1 import AppFct2_1
 from actions.v1_action_fct_2_2 import AppFct2_2
 from actions.v1_action_gestion_inscriptions import AppFctGestion_Inscriptions
+from actions.v1_action_gestion_resultats import AppFctGestion_Resultats
 
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
@@ -33,6 +34,7 @@ class AppWindow(QMainWindow):
     fct_2_1_dialog = None
     fct_2_2_dialog = None
     gestion_inscriptions_dialog = None
+    gestion_resultats_dialog = None
 
     # Constructeur
     def __init__(self):
@@ -116,13 +118,13 @@ class AppWindow(QMainWindow):
 
         except Exception as e:
              # En cas d'erreur, on affiche un message
-            display.refreshLabel(self.ui.label_retour_BD,
+            display.refreshLabel(self.ui.label_retour_BD_2,
                                   "L'erreur suivante s'est produite pendant lors de la création de la base V1: " + repr(
                                       e) + ".")
 
         else:
             # Si tout s'est bien passé, on affiche le message de succès et on commit
-            display.refreshLabel(self.ui.label_retour_BD, "La base de données V1 a été créée avec succès.")
+            display.refreshLabel(self.ui.label_retour_BD_2, "La base de données V1 a été créée avec succès.")
             self.data.commit()
             # On émet le signal indiquant la modification de la table
             self.changedValue.emit()
@@ -136,11 +138,11 @@ class AppWindow(QMainWindow):
 
         except Exception as e:
             # En cas d'erreur, on affiche un message
-            display.refreshLabel(self.ui.label_retour_BD, "L'erreur suivante s'est produite lors de l'insertion des données V1 : "+repr(e)+".")
+            display.refreshLabel(self.ui.label_retour_BD_2, "L'erreur suivante s'est produite lors de l'insertion des données V1 : "+repr(e)+".")
 
         else:
             # Si tout s'est bien passé, on affiche le message de succès et on commit
-            display.refreshLabel(self.ui.label_retour_BD, "Un jeu de test V1 a été inséré dans la base avec succès.")
+            display.refreshLabel(self.ui.label_retour_BD_2, "Un jeu de test V1 a été inséré dans la base avec succès.")
             self.data.commit()
             # On émet le signal indiquant la modification de la table
             self.changedValue.emit()
@@ -154,13 +156,13 @@ class AppWindow(QMainWindow):
 
         except Exception as e:
             # En cas d'erreur, on affiche un message
-            display.refreshLabel(self.ui.label_retour_BD,
+            display.refreshLabel(self.ui.label_retour_BD_2,
                                  "L'erreur suivante s'est produite pendant lors de la création des triggers de la base V1: " + repr(
                                      e) + ".")
 
         else:
             # Si tout s'est bien passé, on affiche le message de succès et on commit
-            display.refreshLabel(self.ui.label_retour_BD, "Les triggers de la base de données V1 ont été créés avec succès.")
+            display.refreshLabel(self.ui.label_retour_BD_2, "Les triggers de la base de données V1 ont été créés avec succès.")
             self.data.commit()
             # On émet le signal indiquant la modification de la table
             self.changedValue.emit()
@@ -174,11 +176,11 @@ class AppWindow(QMainWindow):
 
         except Exception as e:
             # En cas d'erreur, on affiche un message
-            display.refreshLabel(self.ui.label_retour_BD, "Erreur lors de la suppression de la base de données V1: " + repr(e)+".")
+            display.refreshLabel(self.ui.label_retour_BD_2, "Erreur lors de la suppression de la base de données V1: " + repr(e)+".")
 
         else:
             # Si tout s'est bien passé, on affiche le message de succès (le commit est automatique pour un DROP TABLE)
-            display.refreshLabel(self.ui.label_retour_BD, "La base de données V1 a été supprimée avec succès.")
+            display.refreshLabel(self.ui.label_retour_BD_2, "La base de données V1 a été supprimée avec succès.")
             # On émet le signal indiquant la modification de la table
             self.changedValue.emit()
 
@@ -252,6 +254,12 @@ class AppWindow(QMainWindow):
         self.gestion_inscriptions_dialog = AppFctGestion_Inscriptions(self.data)
         self.gestion_inscriptions_dialog.show()
         self.changedValue.connect(self.gestion_inscriptions_dialog.refreshResult)
+    def open_gestion_resultats(self):
+        if self.gestion_resultats_dialog is not None:
+            self.gestion_resultats_dialog.close()
+        self.gestion_resultats_dialog = AppFctGestion_Resultats(self.data)
+        self.gestion_resultats_dialog.show()
+        self.changedValue.connect(self.gestion_resultats_dialog.refreshResult)
         
     # On intercepte l'évènement de cloture de la fenêtre principale pour intercaler quelques actions avant sa fermeture
     def closeEvent(self, event):
@@ -273,6 +281,10 @@ class AppWindow(QMainWindow):
             self.fct_2_1_dialog.close()
         if (self.fct_2_2_dialog is not None):
             self.fct_2_2_dialog.close()
+        if (self.gestion_inscriptions_dialog is not None):
+            self.gestion_inscriptions_dialog.close()
+        if (self.gestion_resultats_dialog is not None):
+            self.gestion_resultats_dialog.close()
 
         # On ferme proprement la base de données
         self.data.close()
