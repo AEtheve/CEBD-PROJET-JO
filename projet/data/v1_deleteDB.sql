@@ -10,5 +10,12 @@ DROP TABLE IF EXISTS LesDisciplines;
 DROP VIEW IF EXISTS LesAgesSportifs;
 DROP VIEW IF EXISTS LesNbsEquipiers;
 
+DROP TRIGGER IF EXISTS exaequo_or;
+DROP TRIGGER IF EXISTS exaequo_argent;
+DROP TRIGGER IF EXISTS exaequo_bronze;
+DROP TRIGGER IF EXISTS medailles_participant_argent;
+DROP TRIGGER IF EXISTS medailles_participant_bronze;
+DROP TRIGGER IF EXISTS categorie_participant;
+DROP TRIGGER IF EXISTS num_sportif;
+DROP TRIGGER IF EXISTS num_equipe;
 
--- TODO 3.3 : pensez à détruire vos triggers !

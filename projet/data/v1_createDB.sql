@@ -53,6 +53,16 @@ CREATE TABLE EstEquipier
   CONSTRAINT EE_FK2 FOREIGN KEY (numEq) REFERENCES LesEquipes(numEq)
 );
 
+CREATE TABLE LesInscriptions
+(
+  numP NUMBER(4) NOT NULL,
+  numEp NUMBER(3) NOT NULL,
+  CONSTRAINT I_PK PRIMARY KEY (numP, numEp),
+  CONSTRAINT I_CK1 CHECK (numP > 0),
+  CONSTRAINT I_CK2 CHECK (numEp > 0),
+  CONSTRAINT I_FK2 FOREIGN KEY (numEp) REFERENCES LesEpreuves(numEp)
+);
+
 CREATE TABLE MedaillesOr
 (
   numP NUMBER(4) NOT NULL,
@@ -85,17 +95,6 @@ CREATE TABLE MedaillesBronze
   CONSTRAINT MB_FK2 FOREIGN KEY (numEp) REFERENCES LesEpreuves(numEp),
   CONSTRAINT MB_FK1 FOREIGN KEY (numP) REFERENCES LesSportifs(numSp)
 );
-
-CREATE TABLE LesInscriptions
-(
-  numP NUMBER(4) NOT NULL,
-  numEp NUMBER(3) NOT NULL,
-  CONSTRAINT I_PK PRIMARY KEY (numP, numEp),
-  CONSTRAINT I_CK1 CHECK (numP > 0),
-  CONSTRAINT I_CK2 CHECK (numEp > 0),
-  CONSTRAINT I_FK2 FOREIGN KEY (numEp) REFERENCES LesEpreuves(numEp)
-);
-
 
 CREATE VIEW LesAgesSportifs(
     numSp ,

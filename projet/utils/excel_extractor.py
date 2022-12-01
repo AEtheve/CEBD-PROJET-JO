@@ -14,8 +14,7 @@ def read_excel_file_V0(data:sqlite3.Connection, file):
         try:
             query = "insert into V0_LesSportifsEQ values ({},'{}','{}','{}','{}','{}',{})".format(
                 row['numSp'], row['nomSp'], row['prenomSp'], row['pays'], row['categorieSp'], row['dateNaisSp'], row['numEq'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
+
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
@@ -35,8 +34,6 @@ def read_excel_file_V0(data:sqlite3.Connection, file):
                 query = query + "'{}')".format(row['dateEp'])
             else:
                 query = query + "null)"
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(f"{err} : \n{row}")
@@ -50,8 +47,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     for ix, row in df_disciplines.iterrows():
         try:
             query = "insert into LesDisciplines values ('{}')".format(row['nomDi'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
@@ -66,8 +61,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
         try:
             query = "insert into LesSportifs values ({},'{}','{}','{}','{}','{}')".format(
                 row['numSp'], row['nomSp'], row['prenomSp'], row['pays'], row['categorieSp'], row['dateNaisSp'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
@@ -87,8 +80,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
                 query = query + "'{}')".format(row['dateEp'])
             else:
                 query = query + "null)"
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(f"{err} : \n{row}")
@@ -102,8 +93,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     for ix, row in df_equipes.iterrows():
         try:
             query = "insert into LesEquipes values ({})".format(row['numEq'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
@@ -118,8 +107,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     for ix, row in df_estEquipier.iterrows():
         try:
             query = "insert into EstEquipier values ({},{})".format(row['numSp'], row['numEq'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
@@ -134,8 +121,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     for ix, row in df_medaillesOr.iterrows():
         try:
             query = "insert into MedaillesOr values ({},{})".format(row['gold'], row['numEp'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
@@ -150,8 +135,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     for ix, row in df_medaillesArgent.iterrows():
         try:
             query = "insert into MedaillesArgent values ({},{})".format(row['silver'], row['numEp'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
@@ -166,8 +149,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     for ix, row in df_medaillesBronze.iterrows():
         try:
             query = "insert into MedaillesBronze values ({},{})".format(row['bronze'], row['numEp'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
@@ -182,8 +163,6 @@ def read_excel_file_V1(data:sqlite3.Connection, file):
     for ix, row in df_inscriptions.iterrows():
         try:
             query = "insert into LesInscriptions values ({},{})".format(row['numIn'], row['numEp'])
-            # On affiche la requête pour comprendre la construction. A enlever une fois compris.
-            print(query)
             cursor.execute(query)
         except IntegrityError as err:
             print(err)
