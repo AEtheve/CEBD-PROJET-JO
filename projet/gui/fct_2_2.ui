@@ -16,11 +16,14 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTableWidget" name="table_fct_2_2">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <attribute name="horizontalHeaderMinimumSectionSize">
       <number>50</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>200</number>
+      <number>153</number>
      </attribute>
      <attribute name="horizontalHeaderStretchLastSection">
       <bool>true</bool>

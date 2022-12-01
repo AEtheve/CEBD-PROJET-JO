@@ -34,21 +34,8 @@
       </widget>
      </item>
     </layout>
-   </item>
+   </item>@
    <item row="1" column="0">
-    <widget class="QLabel" name="labelAFaire_fct_comp_2">
-     <property name="text">
-      <string>Travail à réaliser : améliorer l'interface afin de proposer une liste des catégories possibles (issues de la base de données).</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
     <widget class="QTableWidget" name="table_fct_comp_2">
      <attribute name="horizontalHeaderMinimumSectionSize">
       <number>50</number>
@@ -63,7 +50,7 @@
       <property name="text">
        <string>numEp</string>
       </property>
-     </column>
+     </column>@
      <column>
       <property name="text">
        <string>nomEp</string>
@@ -73,7 +60,6 @@
       <property name="text">
        <string>formeEp</string>
       </property>
-     </column>
      <column>
       <property name="text">
        <string>categorieEp</string>
@@ -96,7 +82,7 @@
      </column>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="2" column="0">
     <widget class="QLabel" name="label_fct_comp_2">
      <property name="text">
       <string/>

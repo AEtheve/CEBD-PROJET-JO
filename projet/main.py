@@ -14,6 +14,7 @@ from actions.v0_action_fct_comp_1_partie_1 import AppFctComp1Partie1
 from actions.v0_action_fct_comp_2_partie_1 import AppFctComp2Partie1
 from actions.v1_action_fct_2_1 import AppFct2_1
 from actions.v1_action_fct_2_2 import AppFct2_2
+from actions.v1_action_gestion_inscriptions import AppFctGestion_Inscriptions
 
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
@@ -31,6 +32,7 @@ class AppWindow(QMainWindow):
     fct_comp_2_dialog = None
     fct_2_1_dialog = None
     fct_2_2_dialog = None
+    gestion_inscriptions_dialog = None
 
     # Constructeur
     def __init__(self):
@@ -244,6 +246,13 @@ class AppWindow(QMainWindow):
         self.fct_2_2_dialog = AppFct2_2(self.data)
         self.fct_2_2_dialog.show()
         self.changedValue.connect(self.fct_2_2_dialog.refreshResult)
+    def open_gestion_inscriptions(self):
+        if self.gestion_inscriptions_dialog is not None:
+            self.gestion_inscriptions_dialog.close()
+        self.gestion_inscriptions_dialog = AppFctGestion_Inscriptions(self.data)
+        self.gestion_inscriptions_dialog.show()
+        self.changedValue.connect(self.gestion_inscriptions_dialog.refreshResult)
+        
     # On intercepte l'évènement de cloture de la fenêtre principale pour intercaler quelques actions avant sa fermeture
     def closeEvent(self, event):
 
